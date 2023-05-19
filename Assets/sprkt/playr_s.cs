@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class playr_s : MonoBehaviour
 {
+    public float speed=10;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -16,8 +15,7 @@ public class playr_s : MonoBehaviour
     {
         var moveHorizontal = Input.GetAxis("Horizontal");
         var moveVertical = Input.GetAxis("Vertical");
-        var movement = new Vector3(Horizontal, 0, Vertical);
-        
-        rb.AddForce(movement * 3.0f);
+        var movement = new Vector3(moveHorizontal, 0, moveVertical);
+        rb.AddForce(movement * speed);
     }
 }
